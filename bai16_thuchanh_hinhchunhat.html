@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="300"></canvas>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        getWidth() {
+            return this.width;
+        }
+        getHeight() {
+            return this.height;
+        }
+        setWidth() {
+            return this.width = width;
+        }
+       setHeight(){
+            return this.height = height;
+       }
+        getPerimeter() {
+            return 2 * (this.width + this.height);
+        };
+
+// Thêm phương thức area vào lớp Rectangle
+        getArea() {
+            return this.width * this.height;
+        };
+    }
+//khởi tạo đối tượng:
+    let myRectangle = new Rectangle(200, 100);
+    // tinhs chu vi, dien tich:
+    let chu_vi = myRectangle.getPerimeter();
+    let dien_tich = myRectangle.getArea();
+    document.write("dien tich hinh chu nhat = : " + dien_tich+ "<br>");
+    document.write("chu vi hinh chu nhat = : " + chu_vi);
+    //hien thi hinh chu nhat tren web.
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext('2d');
+// Đặt màu sắc cho hình chữ nhật
+        ctx.fillStyle = '#2a84fa';
+//vẽ hình chữ nhật sử dụng fillRect()
+// Tham số: (x, y, width, height)
+        ctx.fillRect(50, 50, 200, 100);
+</script>
+</body>
+</html>
